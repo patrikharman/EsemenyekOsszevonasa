@@ -4,12 +4,18 @@
  */
 package esemenyekosszevonasa;
 
+import javax.swing.JCheckBox;
+
 /**
  *
  * @author HarmanPatrik(SZOFT_2
  */
 public class EsemenyekOsszevonas extends javax.swing.JFrame {
-
+    
+    int osszeg,
+    osszeg = 0;
+    jTextField1.setText()
+    
     /**
      * Creates new form EsemenyekOsszevonas
      */
@@ -33,12 +39,28 @@ public class EsemenyekOsszevonas extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Összesítő");
 
         jCheckBox1.setText("jCheckBox1");
+        jCheckBox1.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                osszesito(evt);
+            }
+        });
 
         jCheckBox2.setText("jCheckBox2");
+        jCheckBox2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                osszesito(evt);
+            }
+        });
 
         jCheckBox3.setText("jCheckBox3");
+        jCheckBox3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                osszesito(evt);
+            }
+        });
 
         jLabel1.setText("összeg:");
 
@@ -61,8 +83,8 @@ public class EsemenyekOsszevonas extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jLabel1)
                 .addGap(27, 27, 27)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,6 +107,15 @@ public class EsemenyekOsszevonas extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+    
+    private void osszesito(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_osszesito
+        JCheckBox chb = (JCheckbox)evt.getSource();
+        if (chb.isSelected()){
+            osszeg += 200;
+        }else{
+            osszeg -= 200
+        }
+    }//GEN-LAST:event_osszesito
 
     /**
      * @param args the command line arguments
